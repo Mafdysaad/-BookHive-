@@ -6,8 +6,16 @@ class Splash extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Splashbody(),
-    );
+    return Scaffold(
+        body: Container(
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.center,
+          end: Alignment.center,
+          colors: [Color(0xFF478DE0), Color(0xFF00BCD4), Color(0xFF6B5FF8)],
+        ),
+      ),
+      child: const Splashbody(),
+    ));
   }
 }

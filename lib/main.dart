@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:booklyapp/Features/splash/presentation/views/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
