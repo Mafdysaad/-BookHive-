@@ -1,4 +1,4 @@
-import 'package:booklyapp/Features/home/presentation/views/home.dart';
+import 'package:booklyapp/Features/home/presentation/views/home_view.dart';
 import 'package:get/get.dart';
 
 void transition() {
