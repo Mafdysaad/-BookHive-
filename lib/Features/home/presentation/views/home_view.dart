@@ -1,5 +1,5 @@
 import 'package:booklyapp/Features/home/presentation/views/widget/home_view_body.dart';
-import 'package:booklyapp/Features/home/presentation/views/widget/profile_datailes.dart';
+import 'package:booklyapp/Features/home/presentation/views/widget/profile_details.dart';
 import 'package:booklyapp/core/utils/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -19,7 +19,7 @@ class Home extends StatelessWidget {
         toolbarHeight: 119,
         backgroundColor: const Color(0xFF7968FF),
         leadingWidth: double.infinity,
-        leading: const ProfileDatailes(),
+        leading: const ProfileDetails(),
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 17),

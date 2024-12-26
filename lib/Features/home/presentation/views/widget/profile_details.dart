@@ -1,9 +1,9 @@
-import 'package:booklyapp/Features/home/presentation/views/widget/custom_Avtair.dart';
+import 'package:booklyapp/Features/home/presentation/views/widget/custom_Avatar.dart';
 import 'package:booklyapp/core/utils/fontstyle.dart';
 import 'package:flutter/material.dart';
 
-class ProfileDatailes extends StatelessWidget {
-  const ProfileDatailes({super.key});
+class ProfileDetails extends StatelessWidget {
+  const ProfileDetails({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +11,7 @@ class ProfileDatailes extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
         ListTile(
-          leading: const CustomAvtair(),
+          leading: const CustomAvatar(),
           title: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

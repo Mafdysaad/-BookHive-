@@ -3,8 +3,8 @@ import 'package:booklyapp/core/utils/fontstyle.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-class CustomAvtair extends StatelessWidget {
-  const CustomAvtair({super.key});
+class CustomAvatar extends StatelessWidget {
+  const CustomAvatar({super.key});
 
   @override
   Widget build(BuildContext context) {
