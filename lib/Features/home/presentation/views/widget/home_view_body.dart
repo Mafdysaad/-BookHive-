@@ -1,3 +1,5 @@
+import 'package:booklyapp/Features/home/presentation/views/widget/book\'s_cover.dart';
+
 import 'package:flutter/material.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -5,17 +7,21 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      children: [],
+    return ListView.builder(
+      itemCount: 8,
+      itemBuilder: (context, index) => const Padding(
+        padding: EdgeInsets.all(10),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Expanded(child: book_cover()),
+            SizedBox(
+              width: 15,
+            ),
+            Expanded(child: book_cover()),
+          ],
+        ),
+      ),
     );
-  }
-}
-
-class CustomAppar extends StatelessWidget {
-  const CustomAppar({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const SizedBox();
   }
 }
