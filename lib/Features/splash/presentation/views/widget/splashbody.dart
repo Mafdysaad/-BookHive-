@@ -19,7 +19,7 @@ class _SplashbodyState extends State<Splashbody>
   void initState() {
     initslidingAnimation();
     super.initState();
-    transition();
+    transition(context);
   }
 
   @override
