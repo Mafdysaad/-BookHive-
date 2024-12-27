@@ -16,7 +16,7 @@ class Home extends StatelessWidget {
     ];
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 119,
+        toolbarHeight: 90,
         backgroundColor: const Color(0xFF7968FF),
         leadingWidth: double.infinity,
         leading: const ProfileDetails(),

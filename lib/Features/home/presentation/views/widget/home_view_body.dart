@@ -1,4 +1,5 @@
 import 'package:booklyapp/Features/home/presentation/views/widget/book\'s_cover.dart';
+import 'package:booklyapp/Features/home/presentation/views/widget/book_titles.dart';
 
 import 'package:flutter/material.dart';
 
@@ -13,12 +14,30 @@ class HomeViewBody extends StatelessWidget {
         padding: EdgeInsets.all(10),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
+          spacing: 15,
           children: [
-            Expanded(child: book_cover()),
-            SizedBox(
-              width: 15,
+            Expanded(
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: 8,
+                  ),
+                  BookCover(),
+                  BookTitles()
+                ],
+              ),
             ),
-            Expanded(child: book_cover()),
+            Expanded(
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: 8,
+                  ),
+                  BookCover(),
+                  BookTitles()
+                ],
+              ),
+            ),
           ],
         ),
       ),

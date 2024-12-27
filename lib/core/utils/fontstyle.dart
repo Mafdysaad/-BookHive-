@@ -17,4 +17,18 @@ abstract class Fontstyle {
     height: 1.43,
     letterSpacing: 0.07,
   );
+  static TextStyle proxima_regular_17 = const TextStyle(
+    color: Color(0xFF6A6F73),
+    fontSize: 17,
+    fontFamily: 'Proxima Nova Soft',
+    fontWeight: FontWeight.w400,
+    height: 1.50,
+  );
+  static TextStyle proxima_Bold_17 = const TextStyle(
+    color: Color(0xFF2F2A5F),
+    fontSize: 17,
+    fontFamily: 'Proxima Nova Soft',
+    fontWeight: FontWeight.w700,
+    height: 1.35,
+  );
 }

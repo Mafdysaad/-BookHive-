@@ -1,13 +1,13 @@
 import 'package:booklyapp/core/utils/assets.dart';
 import 'package:flutter/material.dart';
 
-class book_cover extends StatelessWidget {
-  const book_cover({super.key});
+class BookCover extends StatelessWidget {
+  const BookCover({super.key});
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.of(context).size.height * .25,
+      height: 280,
       child: AspectRatio(
         aspectRatio: 3 / 4,
         child: Container(
