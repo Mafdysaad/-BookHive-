@@ -7,17 +7,18 @@ class CustomAvatar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 60,
-      height: 70,
-      decoration: ShapeDecoration(
-        image: const DecorationImage(
-          image: AssetImage(Assets.resourceImagesMafdy),
-          fit: BoxFit.fill,
-        ),
-        shape: RoundedRectangleBorder(
-          side: const BorderSide(width: 1, color: Color(0xFFFBFBFF)),
-          borderRadius: BorderRadius.circular(85.50),
+    return AspectRatio(
+      aspectRatio: 1,
+      child: Container(
+        decoration: ShapeDecoration(
+          image: const DecorationImage(
+            image: AssetImage(Assets.resourceImagesMafdy),
+            fit: BoxFit.fill,
+          ),
+          shape: RoundedRectangleBorder(
+            side: const BorderSide(width: 1, color: Color(0xFFFBFBFF)),
+            borderRadius: BorderRadius.circular(120),
+          ),
         ),
       ),
     );
