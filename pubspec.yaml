@@ -32,7 +32,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_svg: ^2.0.16
- 
+  font_awesome_flutter: ^10.8.0
   go_router: ^14.6.2
   google_fonts: ^6.2.1
 
@@ -67,6 +67,12 @@ flutter:
     - family: proxima
       fonts:
         - asset: assets/fonts/FontsFree-Net-Proxima-Nova-Soft-W03-Regular.ttf
+    - family: Gt_sectra
+      fonts:
+        - asset: assets/fonts/GT Sectra Fine Regular.ttf
+    - family: Klinicslab
+      fonts:
+        - asset: assets/fonts/._KlinicSlabBold.otf
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
 flutter_assets:
