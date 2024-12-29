@@ -1,9 +1,10 @@
 import 'package:booklyapp/Features/home/presentation/views/widget/custom_Avatar.dart';
 import 'package:booklyapp/core/utils/fontstyle.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
-class CustomLeadingDetailsView extends StatelessWidget {
-  const CustomLeadingDetailsView({super.key});
+class CustomLeadingBookDetails extends StatelessWidget {
+  const CustomLeadingBookDetails({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +13,9 @@ class CustomLeadingDetailsView extends StatelessWidget {
       child: Row(
         children: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              GoRouter.of(context).pop();
+            },
             icon: const Icon(
               Icons.arrow_back_ios,
               color: Colors.white,
