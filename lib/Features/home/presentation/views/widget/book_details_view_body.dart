@@ -1,6 +1,8 @@
 import 'package:booklyapp/Features/home/presentation/views/widget/book\'s_cover.dart';
 import 'package:booklyapp/Features/home/presentation/views/widget/book_descraption.dart';
 import 'package:booklyapp/Features/home/presentation/views/widget/book_rating.dart';
+import 'package:booklyapp/Features/home/presentation/views/widget/horzantil_book_listview.dart';
+import 'package:booklyapp/Features/home/presentation/views/widget/taking_action.dart';
 import 'package:booklyapp/core/const/widget/custom_buttom.dart';
 import 'package:booklyapp/core/utils/fontstyle.dart';
 import 'package:flutter/material.dart';
@@ -33,49 +35,13 @@ class BookDetailsViewBody extends StatelessWidget {
                 height: 15,
               ),
               const BookRating(),
-              const Padding(
-                padding: EdgeInsets.all(25),
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: CustomButton(
-                        text: '19.99 \$',
-                        Backgroundcolor: Colors.red,
-                        borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(15),
-                            bottomLeft: Radius.circular(15)),
-                      ),
-                    ),
-                    Expanded(
-                      child: CustomButton(
-                        text: 'Free Preview',
-                        Backgroundcolor: Colors.green,
-                        borderRadius: BorderRadius.only(
-                            topRight: Radius.circular(15),
-                            bottomRight: Radius.circular(15)),
-                      ),
-                    )
-                  ],
-                ),
-              ),
+              const TakingAction(),
               const Expanded(
                 child: SizedBox(
-                  height: 100,
+                  height: 20,
                 ),
               ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * .20,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, indx) {
-                    return const Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: BookCover(),
-                    );
-                  },
-                  itemCount: 8,
-                ),
-              ),
+              const HorzantilBookListview(),
               const SizedBox(
                 height: 20,
               )
