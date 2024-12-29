@@ -64,7 +64,7 @@ class BookDetailsViewBody extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 250,
+                height: MediaQuery.of(context).size.height * .20,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, indx) {
