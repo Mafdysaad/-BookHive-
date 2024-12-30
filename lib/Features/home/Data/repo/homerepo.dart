@@ -1,4 +1,8 @@
+import 'package:booklyapp/Features/home/Data/models/book_model/book_modle.dart';
+import 'package:booklyapp/core/error/error.dart';
+import 'package:dartz/dartz.dart';
+
 abstract class repo {
-  bookfaturers();
-  booksearch();
+  Future<Either<failuer, List<BookModle>>> FeatchBookFeatrue();
+  Future<Either<failuer, List<BookModle>>> SearchBook();
 }
