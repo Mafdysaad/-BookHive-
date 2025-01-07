@@ -19,7 +19,11 @@ class Homerepoimplmantion extends repo {
       }
       return Right(books);
     } on Exception catch (e) {
-      return left(failuer.sucsess);
+      if (e is DioException) {
+        return left(serverfailuer.ForDioExcption(e));
+      } else {
+        return left(serverfailuer(e.toString()));
+      }
     }
   }
 
