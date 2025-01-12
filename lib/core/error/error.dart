@@ -28,12 +28,12 @@ class serverfailuer extends failuer {
         return serverfailuer('Unexpected Error,please try again!');
     }
   }
-  factory serverfailuer.BadRespons(int StatusConde, dynamic respons) {
-    if (StatusConde == 400 || StatusConde == 401 || StatusConde == 403) {
+  factory serverfailuer.BadRespons(int StatusCode, dynamic respons) {
+    if (StatusCode == 400 || StatusCode == 401 || StatusCode == 403) {
       return serverfailuer(respons['error']['message']);
-    } else if (StatusConde == 404) {
+    } else if (StatusCode == 404) {
       return serverfailuer('Your request not found,plase try later!');
-    } else if (StatusConde == 500) {
+    } else if (StatusCode == 500) {
       return serverfailuer('Internal Server error,plase try later!');
     } else {
       return serverfailuer('Opps There was an Error,plase try again!');
