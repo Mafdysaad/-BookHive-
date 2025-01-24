@@ -1,6 +1,11 @@
+import 'package:booklyapp/Features/home/Data/repo/homerepoimplmantion.dart';
+import 'package:booklyapp/Features/home/presentation/view_models/featrued_book_cubit/home_book_cubit.dart';
 import 'package:booklyapp/Features/home/presentation/views/widget/custom_actions_home_view.dart';
 import 'package:booklyapp/Features/home/presentation/views/widget/home_view_body.dart';
 import 'package:booklyapp/Features/home/presentation/views/widget/profile_details.dart';
+import 'package:booklyapp/core/utils/api_services.dart';
+import 'package:dio/dio.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:flutter/material.dart';
 
@@ -16,7 +21,16 @@ class Home extends StatelessWidget {
           leadingWidth: double.infinity,
           leading: const ProfileDetails(),
           actions: const [CustomActionsHomeView()]),
-      body: const HomeViewBody(),
+      body: BlocProvider(
+        create: (context) => HomeCubitCubit(
+          Homerepoimplmantion(
+            Apiservices(
+              Dio(),
+            ),
+          ),
+        ),
+        child: const HomeViewBody(),
+      ),
     );
   }
 }
