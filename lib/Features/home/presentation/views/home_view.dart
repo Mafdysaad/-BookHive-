@@ -3,16 +3,27 @@ import 'package:booklyapp/Features/home/presentation/view_models/featrued_book_c
 import 'package:booklyapp/Features/home/presentation/views/widget/custom_actions_home_view.dart';
 import 'package:booklyapp/Features/home/presentation/views/widget/home_view_body.dart';
 import 'package:booklyapp/Features/home/presentation/views/widget/profile_details.dart';
-import 'package:booklyapp/core/utils/api_services.dart';
+
 import 'package:booklyapp/core/utils/service_locator.dart';
-import 'package:dio/dio.dart';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:flutter/material.dart';
-import 'package:get_it/get_it.dart';
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   const Home({super.key});
+
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  @override
+  void initState() {
+    // traeger cubit
+    HomeCubit(getit.get<Homerepoimplmantion>()).fetchFeaturedBooks();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +36,7 @@ class Home extends StatelessWidget {
           actions: const [CustomActionsHomeView()]),
       // provide cubit to the screen
       body: BlocProvider(
-        create: (context) => HomeCubitCubit(getit.get<Homerepoimplmantion>()),
+        create: (context) => HomeCubit(getit.get<Homerepoimplmantion>()),
         child: const HomeViewBody(),
       ),
     );
