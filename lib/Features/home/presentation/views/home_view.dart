@@ -23,6 +23,7 @@ class Home extends StatelessWidget {
           leadingWidth: double.infinity,
           leading: const ProfileDetails(),
           actions: const [CustomActionsHomeView()]),
+      // provide cubit to the screen
       body: BlocProvider(
         create: (context) => HomeCubitCubit(getit.get<Homerepoimplmantion>()),
         child: const HomeViewBody(),
