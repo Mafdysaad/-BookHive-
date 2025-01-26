@@ -1,22 +1,22 @@
 part of 'home_book_cubit.dart';
 
-sealed class HomeCubitState extends Equatable {
-  const HomeCubitState();
+sealed class HomeState extends Equatable {
+  const HomeState();
 
   @override
   List<Object> get props => [];
 }
 
-final class HomeCubitInitial extends HomeCubitState {}
+final class HomeCubitInitial extends HomeState {}
 
-final class LodingState extends HomeCubitState {}
+final class LodingState extends HomeState {}
 
-final class FailureState extends HomeCubitState {
+final class FailureState extends HomeState {
   final String massage;
   const FailureState(this.massage);
 }
 
-final class SuccesState extends HomeCubitState {
+final class SuccesState extends HomeState {
   final List<BookModle> books;
   const SuccesState(this.books);
 }

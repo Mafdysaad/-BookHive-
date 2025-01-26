@@ -6,8 +6,8 @@ import 'package:equatable/equatable.dart';
 
 part 'home_cubit_state.dart';
 
-class HomeCubitCubit extends Cubit<HomeCubitState> {
-  HomeCubitCubit(this.homerpo) : super(HomeCubitInitial());
+class HomeCubit extends Cubit<HomeState> {
+  HomeCubit(this.homerpo) : super(HomeCubitInitial());
   final repo homerpo;
   Future<void> fetchFeaturedBooks() async {
     var respons = await homerpo.FeatchBooks();

@@ -6,6 +6,7 @@ import 'package:get_it/get_it.dart';
 final getit = GetIt.instance;
 
 void setup() {
-  getit.registerSingleton(Apiservices(Dio()));
-  getit.registerSingleton(Homerepoimplmantion(getit.get<Apiservices>()));
+  getit.registerSingleton<Apiservices>(Apiservices(Dio()));
+  getit.registerSingleton<Homerepoimplmantion>(
+      Homerepoimplmantion(getit.get<Apiservices>()));
 }
