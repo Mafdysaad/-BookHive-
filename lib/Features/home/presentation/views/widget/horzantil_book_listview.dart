@@ -23,7 +23,9 @@ class HorzantilBookListview extends StatelessWidget {
             itemBuilder: (context, indx) {
               return const Padding(
                 padding: EdgeInsets.all(8.0),
-                child: BookCover(),
+                child: BookCover(
+                    url:
+                        'EgZjaHJvbWUyBggAEEUYOTIHCAEQABiABDINCAIQLhivARjHARiABDIHCAMQABiABDINCAQQLhjHARjRAxiABDIHCAUQABiABDIPCAYQABgKGIMBGLEDGIAEMgcIBxAAGIAEMgcICBAAGIAE0gEJNTIyM2owajE1qAIIsAIB'),
               );
             },
             itemCount: 8,

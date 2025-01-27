@@ -26,6 +26,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
+      // provide cubit to the screen
       create: (context) =>
           HomeCubit(getit.get<Homerepoimplmantion>())..fetchFeaturedBooks(),
       child: Scaffold(
@@ -35,7 +36,6 @@ class _HomeState extends State<Home> {
             leadingWidth: double.infinity,
             leading: const ProfileDetails(),
             actions: const [CustomActionsHomeView()]),
-        // provide cubit to the screen
         body: const HomeViewBody(),
       ),
     );
