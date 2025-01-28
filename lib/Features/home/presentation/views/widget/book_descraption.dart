@@ -2,20 +2,21 @@ import 'package:booklyapp/core/utils/fontstyle.dart';
 import 'package:flutter/material.dart';
 
 class BookDescraption extends StatelessWidget {
-  const BookDescraption({super.key});
+  const BookDescraption({super.key, required this.auther, required this.title});
+  final String title, auther;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         Text(
-          'A Long Walk To Freedom ',
+          title,
           maxLines: 2,
           overflow: TextOverflow.ellipsis,
           style: Fontstyle.proxima_Bold_24,
         ),
         Text(
-          'Nelson Mandela',
+          auther,
           style: Fontstyle.proxima_regular_20,
         ),
       ],

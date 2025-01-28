@@ -1,22 +1,18 @@
+import 'package:booklyapp/Features/home/Data/models/book_model/book_modle.dart';
+import 'package:booklyapp/Features/home/presentation/view_models/featrued_book_cubit/home_book_cubit.dart';
 import 'package:booklyapp/Features/home/presentation/views/widget/book_details_view_body.dart';
 
 import 'package:booklyapp/Features/home/presentation/views/widget/custom_actions_book_details.dart';
 import 'package:booklyapp/Features/home/presentation/views/widget/custom_leading_details_view.dart';
 
-import 'package:booklyapp/core/utils/assets.dart';
-
 import 'package:flutter/material.dart';
 
 class BookeDetailsView extends StatelessWidget {
-  const BookeDetailsView({super.key});
+  const BookeDetailsView({super.key, required this.bookModle});
+  final BookModle bookModle;
 
   @override
   Widget build(BuildContext context) {
-    List<String> icons = [
-      Assets.resourceImagesAbout,
-      Assets.resourceImagesReloade,
-      Assets.resourceImagesLogout
-    ];
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 90,
@@ -25,7 +21,7 @@ class BookeDetailsView extends StatelessWidget {
         leading: const CustomLeadingBookDetails(),
         actions: const [CustomActionsBookDetails()],
       ),
-      body: const BookDetailsViewBody(),
+      body: BookDetailsViewBody(bookModle: bookModle),
     );
   }
 }

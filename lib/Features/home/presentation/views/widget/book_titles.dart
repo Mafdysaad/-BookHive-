@@ -18,7 +18,6 @@ class BookTitles extends StatelessWidget {
           ),
           Text(
             title,
-            maxLines: 2,
             overflow: TextOverflow.ellipsis,
             style: Fontstyle.proxima_Bold_17,
           ),

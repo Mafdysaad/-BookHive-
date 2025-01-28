@@ -1,4 +1,4 @@
-import 'package:booklyapp/core/utils/assets.dart';
+import 'package:image_cacheing/image_cacheing.dart';
 import 'package:flutter/material.dart';
 
 class BookCover extends StatelessWidget {
@@ -9,11 +9,16 @@ class BookCover extends StatelessWidget {
   Widget build(BuildContext context) {
     return AspectRatio(
       aspectRatio: 2.5 / 4,
-      child: Container(
-          decoration: BoxDecoration(
-              borderRadius: BorderRadiusDirectional.circular(20),
-              image:
-                  DecorationImage(fit: BoxFit.fill, image: NetworkImage(url)))),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(20),
+        child: ImageCacheing(
+          url: url,
+          fit: BoxFit.fill,
+          loadingWidget: const Center(
+            child: CircularProgressIndicator(),
+          ),
+        ),
+      ),
     );
   }
 }

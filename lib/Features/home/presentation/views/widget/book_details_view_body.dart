@@ -1,16 +1,15 @@
+import 'package:booklyapp/Features/home/Data/models/book_model/book_modle.dart';
 import 'package:booklyapp/Features/home/presentation/views/widget/book\'s_cover.dart';
 import 'package:booklyapp/Features/home/presentation/views/widget/book_descraption.dart';
 import 'package:booklyapp/Features/home/presentation/views/widget/book_rating.dart';
 import 'package:booklyapp/Features/home/presentation/views/widget/horzantil_book_listview.dart';
 import 'package:booklyapp/Features/home/presentation/views/widget/taking_action.dart';
-import 'package:booklyapp/core/const/widget/custom_buttom.dart';
-import 'package:booklyapp/core/utils/fontstyle.dart';
+
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
-  const BookDetailsViewBody({super.key});
+  final BookModle bookModle;
+  const BookDetailsViewBody({super.key, required this.bookModle});
 
   @override
   Widget build(BuildContext context) {
@@ -26,13 +25,16 @@ class BookDetailsViewBody extends StatelessWidget {
               Padding(
                   padding: EdgeInsets.symmetric(
                       horizontal: MediaQuery.of(context).size.width * .25),
-                  child: const BookCover(
-                      url:
-                          'EgZjaHJvbWUyBggAEEUYOTIHCAEQABiABDINCAIQLhivARjHARiABDIHCAMQABiABDINCAQQLhjHARjRAxiABDIHCAUQABiABDIPCAYQABgKGIMBGLEDGIAEMgcIBxAAGIAEMgcICBAAGIAE0gEJNTIyM2owajE1qAIIsAIB')),
+                  child: BookCover(
+                    url: bookModle.volumeInfo!.imageLinks!.thumbnail ?? '',
+                  )),
               const SizedBox(
                 height: 20,
               ),
-              const BookDescraption(),
+              BookDescraption(
+                title: bookModle.volumeInfo!.title ?? '',
+                auther: bookModle.volumeInfo!.authors![0] ?? '',
+              ),
               const SizedBox(
                 height: 15,
               ),
