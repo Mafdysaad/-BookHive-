@@ -10,7 +10,7 @@ class Homerepoimplmantion extends repo {
 
   Homerepoimplmantion(this.apiservices);
   @override
-  Future<Either<failuer, List<BookModle>>> FeatchBooks() async {
+  Future<Either<failuer, List<BookModle>>> featchBooks() async {
     try {
       var data = await apiservices.get('volumes?q=programming');
       List<BookModle> books = [];
@@ -28,8 +28,29 @@ class Homerepoimplmantion extends repo {
   }
 
   @override
-  Future<Either<failuer, List<BookModle>>> SearchBook() {
+  Future<Either<failuer, List<BookModle>>> searchBook() {
     // TODO: implement SearchBook
     throw UnimplementedError();
+  }
+
+  @override
+  Future<Either<failuer, List<BookModle>>> relatedBook(
+      {required String categories}) async {
+    try {
+      var respons = await apiservices.get(
+          'https://www.googleapis.com/books/v1/volumes?q=$categories&filtering=free-ebooks&Sorting=relevance');
+
+      List<BookModle> books = [];
+      for (var item in respons['items']) {
+        books.add(item);
+      }
+      return Right(books);
+    } on Exception catch (e) {
+      if (e is DioException) {
+        return left(serverfailuer.ForDioExcption(e));
+      } else {
+        return left(serverfailuer(e.toString()));
+      }
+    }
   }
 }

@@ -3,6 +3,8 @@ import 'package:booklyapp/core/error/error.dart';
 import 'package:dartz/dartz.dart';
 
 abstract class repo {
-  Future<Either<failuer, List<BookModle>>> FeatchBooks();
-  Future<Either<failuer, List<BookModle>>> SearchBook();
+  Future<Either<failuer, List<BookModle>>> featchBooks();
+  Future<Either<failuer, List<BookModle>>> searchBook();
+  Future<Either<failuer, List<BookModle>>> relatedBook(
+      {required String categories});
 }
