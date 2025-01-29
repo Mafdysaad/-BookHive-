@@ -17,6 +17,7 @@ class VolumeInfo extends Equatable {
   final String? printType;
   final List<dynamic>? categories;
   final String? maturityRating;
+  final num? avergerating;
   final bool? allowAnonLogging;
   final String? contentVersion;
   final PanelizationSummary? panelizationSummary;
@@ -38,6 +39,7 @@ class VolumeInfo extends Equatable {
     this.printType,
     this.categories,
     this.maturityRating,
+    this.avergerating,
     this.allowAnonLogging,
     this.contentVersion,
     this.panelizationSummary,
@@ -65,6 +67,7 @@ class VolumeInfo extends Equatable {
         printType: json['printType'] as String?,
         categories: json['categories'] as List<dynamic>?,
         maturityRating: json['maturityRating'] as String?,
+        avergerating: json["averageRating"] as num?,
         allowAnonLogging: json['allowAnonLogging'] as bool?,
         contentVersion: json['contentVersion'] as String?,
         panelizationSummary: json['panelizationSummary'] == null

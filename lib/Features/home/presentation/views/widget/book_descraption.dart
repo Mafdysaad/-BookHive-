@@ -10,6 +10,7 @@ class BookDescraption extends StatelessWidget {
     return Column(
       children: [
         Text(
+          textAlign: TextAlign.center,
           title,
           maxLines: 2,
           overflow: TextOverflow.ellipsis,

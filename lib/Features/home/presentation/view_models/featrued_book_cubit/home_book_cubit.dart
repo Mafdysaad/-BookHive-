@@ -10,6 +10,7 @@ class HomeCubit extends Cubit<HomeState> {
   HomeCubit(this.homerpo) : super(HomeCubitInitial());
   final repo homerpo;
   Future<void> fetchFeaturedBooks() async {
+    emit(LodingState());
     var respons = await homerpo.FeatchBooks();
     respons.fold((error) => emit(FailureState(error.toString())),
         (books) => emit(SuccesState(books)));

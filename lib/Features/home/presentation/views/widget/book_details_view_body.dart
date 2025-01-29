@@ -38,7 +38,9 @@ class BookDetailsViewBody extends StatelessWidget {
               const SizedBox(
                 height: 15,
               ),
-              const BookRating(),
+              BookRating(
+                rating: bookModle.volumeInfo!.avergerating,
+              ),
               const TakingAction(),
               const Expanded(
                 child: SizedBox(

@@ -37,7 +37,7 @@ class HomeViewBody extends StatelessWidget {
                       } else if (state is FailureState) {
                         return Text(state.massage);
                       } else {
-                        return const Text('error');
+                        return const Text('oops something went wrong!!');
                       }
                     })),
               ),
