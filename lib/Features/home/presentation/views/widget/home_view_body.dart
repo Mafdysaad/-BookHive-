@@ -15,8 +15,8 @@ class HomeViewBody extends StatelessWidget {
           hasScrollBody: true,
           child: Column(
             children: [
-              const Padding(
-                padding: EdgeInsets.all(10),
+              Padding(
+                padding: const EdgeInsets.all(10),
                 child: CustomTextformfield(),
               ),
               Expanded(
@@ -25,21 +25,18 @@ class HomeViewBody extends StatelessWidget {
                       horizontal: 8,
                     ),
                     child: BlocBuilder<HomeCubit, HomeState>(
-                        builder: (context, state) {
-                      if (state is SuccesState) {
-                        return CustomGridview(
-                          books: state.books,
-                        );
-                      } else if (state is LodingState) {
-                        return const Center(
-                          child: CircularProgressIndicator(),
-                        );
-                      } else if (state is FailureState) {
-                        return Text(state.massage);
-                      } else {
-                        return const Text('oops something went wrong!!');
-                      }
-                    })),
+                      builder: (context, state) {
+                        return state is FeatchSuccesState
+                            ? CustomGridview(books: state.books)
+                            : state is FeatchLodingState
+                                ? const Center(
+                                    child: CircularProgressIndicator(),
+                                  )
+                                : (state is FeatchFailureState)
+                                    ? Text(state.massage)
+                                    : const Text('oops something went wrong!!');
+                      },
+                    )),
               ),
             ],
           ))

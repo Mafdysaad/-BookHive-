@@ -25,19 +25,14 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      // provide cubit to the screen
-      create: (context) =>
-          HomeCubit(getit.get<Homerepoimplmantion>())..fetchFeaturedBooks(),
-      child: Scaffold(
-        appBar: AppBar(
-            toolbarHeight: 90,
-            backgroundColor: const Color(0xFF7968FF),
-            leadingWidth: double.infinity,
-            leading: const ProfileDetails(),
-            actions: const [CustomActionsHomeView()]),
-        body: const HomeViewBody(),
-      ),
+    return Scaffold(
+      appBar: AppBar(
+          toolbarHeight: 90,
+          backgroundColor: const Color(0xFF7968FF),
+          leadingWidth: double.infinity,
+          leading: const ProfileDetails(),
+          actions: const [CustomActionsHomeView()]),
+      body: const HomeViewBody(),
     );
   }
 }

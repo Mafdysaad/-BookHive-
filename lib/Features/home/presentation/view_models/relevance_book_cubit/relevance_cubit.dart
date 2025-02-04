@@ -7,11 +7,13 @@ part 'relevance_state.dart';
 
 class RelevanceCubitCubit extends Cubit<RelevanceCubitState> {
   Homerepoimplmantion homerepoimplmantion;
-  RelevanceCubitCubit(this.homerepoimplmantion) : super(InitialState());
+
+  RelevanceCubitCubit(this.homerepoimplmantion)
+      : super(RelevanceInitialState());
   Future<void> getrelevanc(String categories) async {
-    emit(LodingState());
+    emit(RelevanceLodingState());
     var respon = await homerepoimplmantion.relatedBook(categories: categories);
-    respon.fold((error) => emit(RelevanceCubitFailure(error.toString())),
-        (books) => emit(SuccessState(books)));
+    respon.fold((error) => emit(RelevanceFailuerState(error.toString())),
+        (books) => emit(RelevanceSuccessState(books)));
   }
 }

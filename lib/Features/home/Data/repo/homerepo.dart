@@ -4,7 +4,8 @@ import 'package:dartz/dartz.dart';
 
 abstract class repo {
   Future<Either<failuer, List<BookModle>>> featchBooks();
-  Future<Either<failuer, List<BookModle>>> searchBook();
+  Future<Either<failuer, List<BookModle>>> searchBook(
+      {required String bookName});
   Future<Either<failuer, List<BookModle>>> relatedBook(
       {required String categories});
 }

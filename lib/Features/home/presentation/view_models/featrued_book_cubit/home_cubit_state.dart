@@ -9,14 +9,14 @@ sealed class HomeState extends Equatable {
 
 final class HomeCubitInitial extends HomeState {}
 
-final class LodingState extends HomeState {}
+final class FeatchLodingState extends HomeState {}
 
-final class FailureState extends HomeState {
+final class FeatchFailureState extends HomeState {
   final String massage;
-  const FailureState(this.massage);
+  const FeatchFailureState(this.massage);
 }
 
-final class SuccesState extends HomeState {
+final class FeatchSuccesState extends HomeState {
   final List<BookModle> books;
-  const SuccesState(this.books);
+  const FeatchSuccesState(this.books);
 }

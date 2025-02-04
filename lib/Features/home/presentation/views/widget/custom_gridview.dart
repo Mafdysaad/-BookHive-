@@ -2,6 +2,7 @@ import 'package:booklyapp/Features/home/Data/models/book_model/book_modle.dart';
 import 'package:booklyapp/Features/home/presentation/view_models/featrued_book_cubit/home_book_cubit.dart';
 import 'package:booklyapp/Features/home/presentation/views/widget/book\'s_cover.dart';
 import 'package:booklyapp/Features/home/presentation/views/widget/book_titles.dart';
+import 'package:booklyapp/core/const/url.dart';
 
 import 'package:booklyapp/core/utils/approutes.dart';
 import 'package:flutter/material.dart';
@@ -29,10 +30,10 @@ class CustomGridview extends StatelessWidget {
                     .push(Approutes.kBookDetails, extra: books[index]);
               },
               child: BookCover(
-                  url: books[index].volumeInfo!.imageLinks!.smallThumbnail!)),
+                  url: books[index].volumeInfo!.imageLinks?.smallThumbnail)),
           BookTitles(
-            title: books[index].volumeInfo!.title!,
-            auther: books[index].volumeInfo!.authors![0],
+            title: books[index].volumeInfo!.title ?? "",
+            auther: books[index].volumeInfo!.authors?[0] ?? '',
           )
         ],
       ),
