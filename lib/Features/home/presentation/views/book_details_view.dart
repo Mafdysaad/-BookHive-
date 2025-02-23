@@ -22,7 +22,7 @@ class _BookeDetailsViewState extends State<BookeDetailsView> {
   @override
   void initState() {
     BlocProvider.of<RelevanceCubitCubit>(context)
-      ..getrelevanc(widget.bookModle.volumeInfo!.categories?[0] ?? bookname);
+        .getrelevanc(widget.bookModle.volumeInfo!.categories?[0] ?? bookname);
     super.initState();
   }
 

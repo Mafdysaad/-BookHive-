@@ -58,7 +58,9 @@ class _BookDetailsViewBodyState extends State<BookDetailsViewBody> {
               BookRating(
                 rating: widget.bookModle.volumeInfo!.avergerating,
               ),
-              const TakingAction(),
+              TakingAction(
+                bookModle: widget.bookModle,
+              ),
               const Expanded(
                 child: SizedBox(
                   height: 20,
