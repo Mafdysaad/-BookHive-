@@ -43,6 +43,7 @@ The project is built using **Cubit** for state management and follows the **MVVM
    ```bash
    flutter run
 
+# Project Structure
 
 ```text
 lib/
@@ -77,4 +78,7 @@ lib/
 assets/
 ├─ images/        # Screenshots, icons, book covers
 └─ fonts/         # Custom fonts
-       
+```
+
+# Contributing
+Contributions are welcome! Please open an issue or submit a pull request.
